@@ -16,8 +16,8 @@ jobs:
         script: |
           cd /home/ubuntu/app
           git pull origin main
-          docker stop myApp
-          docker rm myApp
+          docker stop altaApp
+          docker rm altaApp
           cd program
-          docker build -t my-app:latest .
-          docker run -d -e "HTTP_PORT=:80" -p 80:80 --name myApp my-app:latest
+          docker build -t alta-app:latest .
+          docker run -d -e "HTTP_PORT=:80" -p 80:80 --name altaApp alta-app:latest
