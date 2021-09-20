@@ -15,9 +15,15 @@ func main() {
 
 	e := echo.New()
 	e.GET("/", hello)
+	e.GET("/:name", helloName)
 	e.Start(port)
 }
 
 func hello(c echo.Context) error {
 	return c.String(http.StatusOK, "hello world")
+}
+
+func helloName(c echo.Context) error {
+	name := c.Param("name")
+	return c.String(http.StatusOK, "hello"+name)
 }
