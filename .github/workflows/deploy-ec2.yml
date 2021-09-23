@@ -3,7 +3,7 @@ on: [push]
 jobs:
 
   build:
-    name: Build
+    name: Deploy to EC2
     runs-on: ubuntu-latest
     steps:
     - name: Deploy to EC2 by using SSH
